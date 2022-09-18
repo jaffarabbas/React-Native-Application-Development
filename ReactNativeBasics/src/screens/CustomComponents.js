@@ -1,5 +1,6 @@
 import React from 'react'
 import { View,Text,StyleSheet } from 'react-native'
+import FlatScreenDemo from './FlatScreenDemo';
 
 const name = 'jaffar'
 
@@ -11,6 +12,7 @@ const CustomComponents = () => {
   return (
     <View>
         <Text style={styles.text}>CustomComponents {getMyName(name)}</Text>
+        <FlatScreenDemo/>
     </View>
   )
 }
