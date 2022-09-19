@@ -1,5 +1,5 @@
 import React from 'react'
-import { View,Text,StyleSheet } from 'react-native'
+import { View,Text,StyleSheet, SafeAreaView } from 'react-native'
 import FlatScreenDemo from './FlatScreenDemo';
 
 const name = 'jaffar'
@@ -10,19 +10,24 @@ const getMyName = (name) => {
 
 const CustomComponents = () => {
   return (
-    <View>
-        <Text style={styles.text}>CustomComponents {getMyName(name)}</Text>
+    <SafeAreaView>
+      <View style={styles.headView}>
+        <Text style={styles.text}>Sroll Flat List By {getMyName(name)}</Text>
         <FlatScreenDemo/>
-    </View>
+      </View>
+    </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
-    text:{
+  headView:{
+    marginTop:70,
+  },
+  text:{
       color: '#fff',
       fontWeight: 'bold',
-      marginTop: 50,
-      fontSize: 20
+      fontSize: 20,
+      textAlign: 'center',
     }
   });
 export default CustomComponents
