@@ -5,7 +5,6 @@ import CustomComponents from './src/screens/CustomComponents';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Jaffar here</Text>
       <CustomComponents/>
       <StatusBar style="auto" />
     </View>
