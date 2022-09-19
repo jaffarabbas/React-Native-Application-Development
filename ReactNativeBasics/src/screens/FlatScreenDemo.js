@@ -1,5 +1,11 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { Button, Dimensions, FlatList, StyleSheet, Text, View } from 'react-native'
+import ButtonDemo from './ButtonDemo';
+import CustomButton from './CustomButton';
+import Images from './Images';
+
+var width = Dimensions.get('window').width; //full width
+var height = Dimensions.get('window').height; //full height
 
 const FlatScreenDemo = () => {
   const names = [
@@ -71,8 +77,18 @@ const FlatScreenDemo = () => {
             horizontal
             numColumns={1}
             showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingBottom: 50 }}
             renderItem = {(sub) => {
-               return <Text style={styles.text}>{sub.item}</Text>
+               return (
+               <>
+                <View style={styles.cardView}>
+                    <Images/>
+                    <Text style={styles.text}>{sub.item}</Text>
+                    <ButtonDemo/>
+                    <CustomButton/>
+                </View>
+               </>
+               )
             }}
             />
             </>
@@ -87,18 +103,26 @@ const styles = StyleSheet.create({
       justifyContent:'center',
       alignItems:'center',
       textAlign:'center',
-      marginTop:30,
-      paddingHorizontal:20
+      paddingHorizontal:20,
+      paddingVertical:30,
     },
     text:{
       color: '#fff',
       fontWeight: 'bold',
       fontSize: 20,
-      borderColor: '#fff',
-      borderWidth: 1,
-      padding: 20,
-      paddingHorizontal: 143,
-      margin: 10
+      textAlign: 'center'
+    },
+    cardView:{
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 20,
+        borderColor: '#fff',
+        borderWidth: 1,
+        padding: 20,
+        textAlign: 'center',
+        alignSelf: 'stretch',
+        paddingHorizontal: 50,
+        margin: 10
     }
 });
 
