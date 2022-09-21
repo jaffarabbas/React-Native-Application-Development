@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View,Text,StyleSheet, SafeAreaView } from 'react-native'
+import TextInputComponent from '../components/TextInputComponent';
 import FlatScreenDemo from './FlatScreenDemo';
 
 const name = 'jaffar'
@@ -12,7 +13,8 @@ const CustomComponents = () => {
   return (
     <SafeAreaView>
       <View style={styles.headView}>
-        <Text style={styles.text}>Sroll Flat List By {getMyName(name)}</Text>
+        <Text style={styles.text}>Scroll Flat List By {getMyName(name)}</Text>
+        <TextInputComponent/>
         <FlatScreenDemo/>
       </View>
     </SafeAreaView>
@@ -21,7 +23,7 @@ const CustomComponents = () => {
 
 const styles = StyleSheet.create({
   headView:{
-    marginTop:70,
+    marginTop:120,
   },
   text:{
       color: '#fff',
