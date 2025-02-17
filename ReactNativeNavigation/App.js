@@ -27,7 +27,9 @@ export default function App() {
           <Stack.Screen name="Categories" component={CategoriesScreen} options={{
             title:'Meal Categories'
           }} />
-          <Stack.Screen name="MealsDetial" component={MealsDetail} />
+          <Stack.Screen options={{
+            title:'Meal Details'
+          }}  name="MealsDetial" component={MealsDetail} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
